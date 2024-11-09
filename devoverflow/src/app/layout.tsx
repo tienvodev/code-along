@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import ThemeProvider from "@/context/Theme";
-import Navbar from "@/components/navigation/navbar";
+import { Toaster } from "@/components/ui/toaster";
+import { SessionProvider } from "next-auth/react";
 
 const inter = localFont({
   src: "./fonts/InterVF.ttf",
@@ -43,8 +44,8 @@ const RootLayout = ({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
+          <SessionProvider>{children}</SessionProvider>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
