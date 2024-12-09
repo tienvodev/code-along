@@ -1,0 +1,24 @@
+.Pattern {
+  flex: 1 1 25%;
+}
+
+.Pattern {
+  background: fixed
+      linear-gradient(green, green 6px, transparent 6px, transparent 40px),
+    fixed linear-gradient(transparent, #fff 70%),
+    fixed
+      repeating-linear-gradient(
+        orange 0px,
+        orange 4px,
+        transparent 4px,
+        transparent 40px
+      ),
+    fixed
+      repeating-linear-gradient(
+        90deg,
+        orange,
+        orange 4px,
+        transparent 4px,
+        transparent 40px
+      );
+}

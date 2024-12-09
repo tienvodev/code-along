@@ -1,0 +1,76 @@
+.Pattern {
+  flex: 1 1 25%;
+}
+
+.Pattern01 {
+  /* Using conic-gradient() */
+  /* background-image: conic-gradient(
+    #000 0% 25%,
+    #eee 25% 50%,
+    #000 50% 75%,
+    #fff 75% 100%
+  ); */
+
+  /* Using repeating-conic-gradient() */
+  background-image: repeating-conic-gradient(
+    #000 0deg 90deg,
+    #eee 90deg 180deg
+  );
+
+  background-size: 6rem 6rem;
+}
+
+.Pattern02 {
+  /* Using repeating-conic-gradient() */
+  background-image: repeating-conic-gradient(
+    from 45deg,
+    #084c7f 0deg 90deg,
+    #fef5e9 90deg 180deg
+  );
+
+  background-size: 6rem 6rem;
+}
+
+@property --rotation {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.Pattern03 {
+  /* Using repeating-conic-gradient() */
+  background-image: repeating-conic-gradient(
+    from var(--rotation),
+    #f67280 0deg 60deg,
+    #355c7d 60deg 120deg
+  );
+
+  animation: rotate 1000ms linear infinite;
+
+  background-size: 6rem 6rem;
+}
+
+@keyframes rotate {
+  to {
+    --rotation: 360deg;
+  }
+}
+
+.Pattern04 {
+  background-image: linear-gradient(
+      0deg,
+      transparent 0% 49%,
+      #f8edd1 49% 51%,
+      transparent 51%
+    ),
+    linear-gradient(90deg, transparent 0% 49%, #f8edd1 49% 51%, transparent 51%),
+    linear-gradient(45deg, transparent 0% 49%, #f8edd1 49% 51%, transparent 51%),
+    linear-gradient(
+      -45deg,
+      transparent 0% 49%,
+      #f8edd1 49% 51%,
+      transparent 51%
+    ),
+    repeating-conic-gradient(from 45deg, #f07a7a 0% 25%, #959789 25% 50%);
+  background-size: 6rem 6rem;
+}
